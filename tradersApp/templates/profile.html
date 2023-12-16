@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>PropMagnet</title>
+    <link rel="icon" href="{% static 'images/logo2.jpg' %}" type="image/icon type">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ca2474264d.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet"> -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"
+        integrity="sha512-example" crossorigin="anonymous" />
+
+
+
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background: #0c0b09;
+            color: #fff;
+        }
+
+        a {
+            color: #cda45e;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #d9ba85;
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Playfair Display", serif;
+        }
+
+        /* topbar */
+        #topbar {
+            height: 40px;
+            font-size: 14px;
+            transition: all 0.5s;
+            z-index: 996;
+        }
+
+        #topbar.topbar-scrolled {
+            top: -40px;
+        }
+
+        #topbar .contact-info i {
+            font-style: normal;
+            color: #d9ba85;
+        }
+
+        #topbar .contact-info i span {
+            padding-left: 5px;
+            color: #fff;
+        }
+
+
+
+        /* header */
+        #header {
+            background: rgba(12, 11, 9, 0.6);
+            border-bottom: 1px solid rgba(12, 11, 9, 0.6);
+            transition: all 0.5s;
+            z-index: 997;
+            padding: 15px 0;
+            top: 40px;
+        }
+
+        #header.header-scrolled {
+            top: 0;
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid #37332a;
+        }
+
+        #header .logo {
+            font-size: 32px;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        #header .logo a {
+            color: #fff;
+        }
+
+        #header .logo img {
+            max-height: 40px;
+        }
+
+        .book-a-table-btn {
+            /* margin: 0 0 0 15px; */
+            border: 2px solid #cda45e;
+            color: #fff;
+            border-radius: 50px;
+            padding: 8px 25px;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .book-a-table-btn:hover {
+            background: #cda45e;
+            color: #fff;
+        }
+
+        @media (max-width: 992px) {
+            .book-a-table-btn {
+                margin: 0 15px 0 0;
+                padding: 8px 20px;
+            }
+        }
+
+        .navbar {
+            padding: 0;
+        }
+
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .navbar li {
+            position: relative;
+        }
+
+        .navbar a,
+        .navbar a:focus {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 10px 10px 10px;
+            color: #fff;
+            white-space: nowrap;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .navbar a i,
+        .navbar a:focus i {
+            font-size: 12px;
+            line-height: 0;
+            margin-left: 5px;
+        }
+
+        .navbar a:hover,
+        .navbar .active,
+        .navbar .active:focus,
+        .navbar li:hover>a {
+            color: #d9ba85;
+        }
+
+        .navbar .dropdown ul {
+            display: block;
+            position: absolute;
+            left: 14px;
+            top: calc(100% + 30px);
+            margin: 0;
+            padding: 10px 0;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            background: #fff;
+            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .navbar .dropdown ul li {
+            min-width: 200px;
+        }
+
+        .navbar .dropdown ul a {
+            padding: 10px 20px;
+            color: #444444;
+        }
+
+        .navbar .dropdown ul a i {
+            font-size: 12px;
+        }
+
+        .navbar .dropdown ul a:hover,
+        .navbar .dropdown ul .active:hover,
+        .navbar .dropdown ul li:hover>a {
+            color: #cda45e;
+        }
+
+        .navbar .dropdown:hover>ul {
+            opacity: 1;
+            top: 100%;
+            visibility: visible;
+        }
+
+        .navbar .dropdown .dropdown ul {
+            top: 0;
+            left: calc(100% - 30px);
+            visibility: hidden;
+        }
+
+        .navbar .dropdown .dropdown:hover>ul {
+            opacity: 1;
+            top: 0;
+            left: 100%;
+            visibility: visible;
+        }
+
+        @media (max-width: 1366px) {
+            .navbar .dropdown .dropdown ul {
+                left: -90%;
+            }
+
+            .navbar .dropdown .dropdown:hover>ul {
+                left: -100%;
+            }
+        }
+
+        /**
+* Mobile Navigation 
+*/
+        .mobile-nav-toggle {
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            display: none;
+            line-height: 0;
+            transition: 0.5s;
+        }
+
+        @media (max-width: 991px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .navbar ul {
+                display: none;
+            }
+        }
+
+        .navbar-mobile {
+            position: fixed;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .navbar-mobile .mobile-nav-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .navbar-mobile ul {
+            display: block;
+            position: absolute;
+            top: 55px;
+            right: 15px;
+            bottom: 15px;
+            left: 15px;
+            padding: 10px 0;
+            border-radius: 6px;
+            background-color: #fff;
+            overflow-y: auto;
+            transition: 0.3s;
+        }
+
+        .navbar-mobile a,
+        .navbar-mobile a:focus {
+            padding: 10px 20px;
+            font-size: 15px;
+            color: #1a1814;
+        }
+
+        .navbar-mobile a:hover,
+        .navbar-mobile .active,
+        .navbar-mobile li:hover>a {
+            color: #cda45e;
+        }
+
+        .navbar-mobile .getstarted,
+        .navbar-mobile .getstarted:focus {
+            margin: 15px;
+        }
+
+        .navbar-mobile .dropdown ul {
+            position: static;
+            display: none;
+            margin: 10px 20px;
+            padding: 10px 0;
+            z-index: 99;
+            opacity: 1;
+            visibility: visible;
+            background: #fff;
+            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+        }
+
+        .navbar-mobile .dropdown ul li {
+            min-width: 200px;
+        }
+
+        .navbar-mobile .dropdown ul a {
+            padding: 10px 20px;
+        }
+
+        .navbar-mobile .dropdown ul a i {
+            font-size: 12px;
+        }
+
+        .navbar-mobile .dropdown ul a:hover,
+        .navbar-mobile .dropdown ul .active:hover,
+        .navbar-mobile .dropdown ul li:hover>a {
+            color: #cda45e;
+        }
+
+        .navbar-mobile .dropdown>.dropdown-active {
+            display: block;
+        }
+
+        .modal-content {
+            background: linear-gradient(to bottom, #b87d31, #311201);
+            /* Replace the colors with your desired gradient */
+            color: #fff;
+            /* Set the text color */
+        }
+
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #cda45e;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 20px;
+            right: 55px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            z-index: 9;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #b87d31, #311201);
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background: linear-gradient(to bottom, #b87d31, #311201);
+        }
+
+        /* Full-width textarea */
+        .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+        }
+
+        /* When the textarea gets focus, do something */
+        .form-container textarea:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #e7b755;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: rgb(49, 45, 45);
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+
+        .scroll-to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        .scroll-to-top-btn i {
+            display: block;
+            margin: auto;
+        }
+
+        .scroll-to-top-btn.active {
+            display: block;
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container button {
+            margin-bottom: 10px;
+            width: 60px;
+            height: 60px;
+            background-color: #cda45e;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            animation: blinkAnimation 1s infinite alternate;
+        }
+
+        @keyframes blinkAnimation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #hero {
+            width: 100%;
+            height: 80vh;
+            background: url("/static/images/order1.webp") top center;
+            background-size: cover;
+            position: relative;
+            padding: 0;
+        }
+
+        #hero:before {
+            content: "";
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+
+        section {
+            padding: 60px 0;
+            overflow: hidden;
+        }
+
+        .section-bg {
+            background-color: #1a1814;
+        }
+
+        .section-title {
+            padding-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0;
+            line-height: 1px;
+            margin: 0 0 5px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #aaaaaa;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .section-title h2::after {
+            content: "";
+            width: 120px;
+            height: 1px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 4px 10px;
+        }
+
+        .section-title p {
+            margin: 0;
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+            font-family: "Playfair Display", serif;
+            color: #cda45e;
+        }
+
+        .about {
+            background: url("/static/images/about4.jpg");
+            background-size: cover;
+            position: relative;
+            padding: 80px 0;
+        }
+
+        .about:before {
+            content: "";
+            background: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .about .about-img {
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .about .about-img img {
+            max-width: 100%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .about .about-img::before {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 1;
+            content: "";
+            border-left: 5px solid #cda45e;
+            border-top: 5px solid #cda45e;
+            transition: 0.5s;
+        }
+
+        .about .about-img::after {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 2;
+            content: "";
+            border-right: 5px solid #cda45e;
+            border-bottom: 5px solid #cda45e;
+            transition: 0.5s;
+        }
+
+        .about .about-img:hover {
+            transform: scale(1.03);
+        }
+
+        .about .about-img:hover::before {
+            left: 10px;
+            top: 10px;
+        }
+
+        .about .about-img:hover::after {
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .about .content h3 {
+            font-weight: 600;
+            font-size: 26px;
+        }
+
+        .about .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about .content ul li {
+            padding-bottom: 10px;
+        }
+
+        .about .content ul i {
+            font-size: 20px;
+            padding-right: 4px;
+            color: #cda45e;
+        }
+
+        .about .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 1024px) {
+            .about {
+                background-attachment: fixed;
+            }
+        }
+        #footer {
+        background: black;
+        padding: 0 0 30px 0;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    #footer .footer-top {
+        background: #0c0b09;
+        border-top: 1px solid #37332a;
+        border-bottom: 1px solid #28251f;
+        padding: 60px 0 30px 0;
+    }
+
+    #footer .footer-top .footer-info {
+        margin-bottom: 30px;
+    }
+
+    #footer .footer-top .footer-info h3 {
+        font-size: 24px;
+        margin: 0 0 20px 0;
+        padding: 2px 0 2px 0;
+        line-height: 1;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+    }
+
+    #footer .footer-top .footer-info p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        font-family: "Playfair Display", serif;
+        color: #fff;
+    }
+
+    #footer .footer-top .social-links a {
+        font-size: 18px;
+        display: inline-block;
+        background: #28251f;
+        color: #fff;
+        line-height: 1;
+        padding: 8px 0;
+        margin-right: 4px;
+        border-radius: 50%;
+        text-align: center;
+        width: 36px;
+        height: 36px;
+        transition: 0.3s;
+    }
+
+    #footer .footer-top .social-links a:hover {
+        background: #cda45e;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #footer .footer-top h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        position: relative;
+        padding-bottom: 12px;
+    }
+
+    #footer .footer-top .footer-links {
+        margin-bottom: 30px;
+    }
+
+    #footer .footer-top .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #footer .footer-top .footer-links ul i {
+        padding-right: 2px;
+        color: #cda45e;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    #footer .footer-top .footer-links ul li {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    #footer .footer-top .footer-links ul li:first-child {
+        padding-top: 0;
+    }
+
+    #footer .footer-top .footer-links ul a {
+        color: #fff;
+        transition: 0.3s;
+        display: inline-block;
+        line-height: 1;
+    }
+
+    #footer .footer-top .footer-links ul a:hover {
+        color: #cda45e;
+    }
+
+    #footer .footer-top .footer-newsletter form {
+        margin-top: 30px;
+        background: #28251f;
+        padding: 6px 10px;
+        position: relative;
+        border-radius: 50px;
+        border: 1px solid #454035;
+    }
+
+    #footer .footer-top .footer-newsletter form input[type=email] {
+        border: 0;
+        padding: 4px;
+        width: calc(100% - 110px);
+        background: #28251f;
+        color: white;
+    }
+
+    #footer .footer-top .footer-newsletter form input[type=submit] {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        border: 0;
+        background: none;
+        font-size: 16px;
+        padding: 0 20px 2px 20px;
+        background: #cda45e;
+        color: #fff;
+        transition: 0.3s;
+        border-radius: 50px;
+    }
+
+    #footer .footer-top .footer-newsletter form input[type=submit]:hover {
+        background: #d3af71;
+    }
+    
+                    .image-container {
+                        text-align: center;
+                    }
+                
+                    .image-container img {
+                        display: inline-block;
+                    }
+                
+   
+    </style>
+    <!-- topbar -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+
+            <div class="contact-info d-flex align-items-center">
+                <i class="fas fa-phone d-flex align-items-center mx-4"><span>+91 9786789098</span></i>
+                <i class="fas fa-clock d-flex align-items-center mx-4"><span> Mon-Sat: 09AM - 06PM</span></i>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- header -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+            <h1 class="logo me-auto me-lg-0"><a href="{% url 'admin_home_page' %}">PropMagnet</a></h1>
+
+            <nav id="navbar" class="navbar order-last order-lg-0 mr-5">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}" class="nav-link scrollto btn text-warning" >LogOut</a></li>
+                    {% else %}
+                    <li><a class="nav-link scrollto btn text-warning" data-toggle="modal" data-target="#signinModal">SignIn</a></li>
+                    {% endif %}
+                </ul>
+                <i class="fas fa-bars mobile-nav-toggle ml-5"></i>
+            
+            
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative text-center text-lg-start"></div>
+    </section> -->
+
+
+    <main id="main" >
+        <!-- about -->
+       
+
+                
+
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up" style="margin-top: 10rem;">
+
+                <div class="row">
+
+                    <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-2 content my-auto">
+                        <h1 class="pb-3">{{tenant.user.first_name}} {{tenant.user.last_name}}</h1>
+                        <p class="">Email ID : {{tenant.user.email}}</p>
+                        <p class="fst-italic">
+                            Address : {{tenant.address}}
+                        </p>
+                        
+                        <p class="fst-italic ">
+                           Contact Number :  {{tenant.phone}}
+                        </p>
+
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-1 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="image-container mx-auto">
+                            <img class="img img-thumbnail" src="{{ tenant.image.url }}" alt="" width="200px">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-title pt-5">
+                    <p>Rental Information</p>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Property</th>
+                            <th>Type</th>
+                            <th>Rent</th>
+                            <th>Agreemented Date</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for booked in Rental_info %}
+                        <tr class="text-light">
+                            <td><img src="{{booked.unit.image.url}}" alt=""></td>
+                            <td>{{booked.unit.property.name}}</td>
+                            <td>{{booked.unit.type}}</td>
+                            <td>{{booked.unit.rent}}</td>
+                            <td>{{booked.agreemented_date}}</td>
+                            <td>{{booked.start_date}}</td>
+                            <td>{{booked.end_date}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
+        
+        <!--  Footer -->
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-info">
+                                <h3>PropMagnet</h3>
+                                <p>
+                                    A108 Adam Street <br>
+                                    NY 535022, USA<br><br>
+                                    <strong>Phone:</strong> +7025845854<br>
+                                    <strong>Email:</strong> info@example.com<br>
+                                </p>
+                                <div class="social-links mt-3">
+                                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="google-plus"><i class="fab fa-skype"></i></i></a>
+                                    <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Properties</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Pricing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Account Types</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Executive Services</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Security Center</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Site Map</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 footer-newsletter">
+                            <h4>Our Newsletter</h4>
+                            <p>Subscribe to our News Letter</p>
+                            <form action="" method="post">
+                                <input type="email" name="email"><input type="submit" value="Subscribe">
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </main>
+
+
+
+    <button class="scroll-to-top-btn" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+
+    
+
+
+
+</body>
+{% for unit in all_units %}
+<!--bookUnit Modal -->
+<div class="modal" id="bookUnit{{unit.id}}">
+    <div class="modal-dialog">
+        <div class="modal-content  text-white" >
+
+            <!-- Modal Header -->
+            <div class="modal-header ">
+                <h4 class="modal-title " >Agreement Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="{% url 'Booking' unit.id %}" method='post' class="was-validated ">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label class="form-label" for="uname">Start Date</label>
+                        <div class="input-group mb-3">
+
+                            <input type="date" class="form-control" name="start" 
+                                required>
+                        </div>
+                       
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="uname">End Date</label>
+                        <div class="input-group mb-3">
+
+                            <input type="date" class="form-control" name="end" 
+                                required>
+                        </div>
+                       
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="pwd">Monthly Rent Date</label>
+
+                        <input type="number" class="form-control" name="rent_date" placeholder="eg: 01"
+                        required>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button type="submit " class="btn text-white" style="background-color: #d4a24c;" onclick="alert('Unit Booked Successfully!')" >Book</button>
+                    </div><br><br>
+
+                    
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div> -->
+
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+<script>
+
+
+    window.addEventListener('load', () => {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        })
+    });
+</script>
+
+<script>
+    (function () {
+        "use strict";
+
+        /**
+         * Easy selector helper function
+         */
+        const select = (el, all = false) => {
+            el = el.trim()
+            if (all) {
+                return [...document.querySelectorAll(el)]
+            } else {
+                return document.querySelector(el)
+            }
+        }
+
+        /**
+         * Easy event listener function
+         */
+        const on = (type, el, listener, all = false) => {
+            let selectEl = select(el, all)
+            if (selectEl) {
+                if (all) {
+                    selectEl.forEach(e => e.addEventListener(type, listener))
+                } else {
+                    selectEl.addEventListener(type, listener)
+                }
+            }
+        }
+
+        /**
+         * Easy on scroll event listener 
+         */
+        const onscroll = (el, listener) => {
+            el.addEventListener('scroll', listener)
+        }
+
+        /**
+         * Navbar links active state on scroll
+         */
+        let navbarlinks = select('#navbar .scrollto', true)
+        const navbarlinksActive = () => {
+            let position = window.scrollY + 200
+            navbarlinks.forEach(navbarlink => {
+                if (!navbarlink.hash) return
+                let section = select(navbarlink.hash)
+                if (!section) return
+                if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+                    navbarlink.classList.add('active')
+                } else {
+                    navbarlink.classList.remove('active')
+                }
+            })
+        }
+        window.addEventListener('load', navbarlinksActive)
+        onscroll(document, navbarlinksActive)
+
+        /**
+         * Scrolls to an element with header offset
+         */
+        const scrollto = (el) => {
+            let header = select('#header')
+            let offset = header.offsetHeight
+
+            let elementPos = select(el).offsetTop
+            window.scrollTo({
+                top: elementPos - offset,
+                behavior: 'smooth'
+            })
+        }
+
+        /**
+         * Toggle .header-scrolled class to #header when page is scrolled
+         */
+        let selectHeader = select('#header')
+        let selectTopbar = select('#topbar')
+        if (selectHeader) {
+            const headerScrolled = () => {
+                if (window.scrollY > 100) {
+                    selectHeader.classList.add('header-scrolled')
+                    if (selectTopbar) {
+                        selectTopbar.classList.add('topbar-scrolled')
+                    }
+                } else {
+                    selectHeader.classList.remove('header-scrolled')
+                    if (selectTopbar) {
+                        selectTopbar.classList.remove('topbar-scrolled')
+                    }
+                }
+            }
+            window.addEventListener('load', headerScrolled)
+            onscroll(document, headerScrolled)
+        }
+        /**
+         * Mobile nav toggle
+         */
+        on('click', '.mobile-nav-toggle', function (e) {
+            select('#navbar').classList.toggle('navbar-mobile')
+            this.classList.toggle('bi-list')
+            this.classList.toggle('bi-x')
+        })
+
+        /**
+         * Mobile nav dropdowns activate
+         */
+        on('click', '.navbar .dropdown > a', function (e) {
+            if (select('#navbar').classList.contains('navbar-mobile')) {
+                e.preventDefault()
+                this.nextElementSibling.classList.toggle('dropdown-active')
+            }
+        }, true)
+
+        /**
+         * Scrool with ofset on links with a class name .scrollto
+         */
+        on('click', '.scrollto', function (e) {
+            if (select(this.hash)) {
+                e.preventDefault()
+
+                let navbar = select('#navbar')
+                if (navbar.classList.contains('navbar-mobile')) {
+                    navbar.classList.remove('navbar-mobile')
+                    let navbarToggle = select('.mobile-nav-toggle')
+                    navbarToggle.classList.toggle('bi-list')
+                    navbarToggle.classList.toggle('bi-x')
+                }
+                scrollto(this.hash)
+            }
+        }, true)
+
+        /**
+         * Scroll with ofset on page load with hash links in the url
+         */
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                if (select(window.location.hash)) {
+                    scrollto(window.location.hash)
+                }
+            }
+        });
+
+        /**
+         * Preloader
+         */
+        let preloader = select('#preloader');
+        if (preloader) {
+            window.addEventListener('load', () => {
+                preloader.remove()
+            });
+        }
+
+        /**
+         * Menu isotope and filter
+         */
+        window.addEventListener('load', () => {
+            let menuContainer = select('.menu-container');
+            if (menuContainer) {
+                let menuIsotope = new Isotope(menuContainer, {
+                    itemSelector: '.menu-item',
+                    layoutMode: 'fitRows'
+                });
+
+                let menuFilters = select('#menu-flters li', true);
+
+                on('click', '#menu-flters li', function (e) {
+                    e.preventDefault();
+                    menuFilters.forEach(function (el) {
+                        el.classList.remove('filter-active');
+                    });
+                    this.classList.add('filter-active');
+
+                    menuIsotope.arrange({
+                        filter: this.getAttribute('data-filter')
+                    });
+                    menuIsotope.on('arrangeComplete', function () {
+                        AOS.refresh()
+                    });
+                }, true);
+            }
+
+        });
+
+        /**
+         * Initiate glightbox 
+         */
+        const glightbox = GLightbox({
+            selector: '.glightbox'
+        });
+
+        /**
+         * Events slider
+         */
+        new Swiper('.events-slider', {
+            speed: 600,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            slidesPerView: 'auto',
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            }
+        });
+    })()
+</script>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
+
+</html>
